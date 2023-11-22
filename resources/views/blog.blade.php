@@ -1,30 +1,35 @@
 @extends('layouts.base')
 @section('content')
-<section class="blogs">
-    <h3 class="title">our daily posts</h3>
-    <div class="box-container">
-@foreach($blogs as $blog)
-        <div class="box">
-            <div class="image">
-                <img src="images/blog-1.jpg" alt="">
-            </div>
-            <div class="content">
-                <h3>{{$blog->name}}</h3>
-                <p>{{$blog->annotation}}</p>
-                <a href="{{asset('blog/'.$blog->id)}}" class="btn">Читать подробнее...</a>
-                <div class="icons">
-                    <p> Дата {{optional($blog->created_at)->diffForHumans()}}</p>
-                    <a href="#"><i class="fas fa-user"></i>by admin</a>
-
+    <section>
+        <div>
+            @foreach ($blogs as $blog)
+            <div class="container_blogs">
+                <div class="image-block_blogs">
+                    <img src="{{asset('/storage/'.$blog->picture)}}" alt="Image">
+                </div>
+                <div class="content-block_blogs">
+                    <div class="content_news">
+                    <h3>{{ $blog->name }}</h3>
+                    <br>
+                    <h2>{!! $blog->annotation !!}</h2>
+                </div>
+                    <div class="lower-content_blogs">
+                        <div class="post_btn">
+                            <h3>Дата {{ optional($blog->created_at)->diffForHumans() }}</h3>
+                            <a href="#"><i class="fas fa-user"></i>by admin</a>
+                        </div>
+                        <div class="btn_post">
+                            <a href="{{asset('blog/' . $blog->id) }}" class="btn">Читать подробнее...</a>
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endforeach
+        @endforeach
 
-<div>
-    {!!$blogs->links()!!}
-</div>
+        <div>
+            {!! $blogs->links() !!}
+        </div>
 
-</section>
+    </section>
 @endsection

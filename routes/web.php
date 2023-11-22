@@ -21,6 +21,7 @@ use Faker\Provider\Base;
 //     return view('welcome');
 // });
 Route::get('products', [Controllers\ProductController::class, 'getIndex']);
+Route::get('allproducts', [Controllers\ProductController::class, 'getAll']);
 Route::get('/',[Controllers\BaseController::class, 'getIndex']);
 Route::get('catalog/{catalog}', [Controllers\CatalogController::class,'getIndex']); //делаем страницу с каталогом
 Route::get('product/{product}', [Controllers\ProductController::class, 'getOne']);

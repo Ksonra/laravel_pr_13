@@ -28,13 +28,16 @@
             Nik<i class="fa fa-circle"></i>laevA</a
           >
 
-          <form action="" class="search-bar-container">
+          <form action="{{asset('allproducts')}}" class="search-bar-container">
             <input
+              name="search"
               type="search"
               id="search-bar"
               placeholder="Что будем искать?.."
             />
-            <label for="search-bar" class="fas fa-search"></label>
+            <label for="search-bar" class="fas fa-search">
+                <input type="submit" value="search">
+            </label>
           </form>
         </section>
       </div>

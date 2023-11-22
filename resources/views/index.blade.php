@@ -48,10 +48,10 @@
       </div>
     </div>
     <div class="banner">
-      <img src="images/14.jpg" alt="" />
+      <img src="images/002.jpg" alt="" />
       <div class="content">
         <span>Новинка</span>
-        <h3>Броши</h3>
+        <h3>Браслеты 2024</h3>
         <a href="#" class="btn">Купить</a>
       </div>
     </div>

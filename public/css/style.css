@@ -17,7 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   outline: none;
   border: none;
   text-decoration: none;
@@ -151,7 +151,7 @@ section {
 }
 
 .header .header-2 .search-bar-container #search-bar::placeholder {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -282,14 +282,87 @@ section {
 }
 
 .banner-container .banner .content h2 {
-    color: var(--price);
-    font-size: 3rem;
-    margin-top: 0.5rem;
-  }
+  color: var(--price);
+  font-size: 3rem;
+  margin-top: 0.5rem;
+}
 
 .banner-container .banner:hover img {
   transform: scale(1.2);
 }
+
+/*
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        } */
+
+.container_blogs {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid;
+  margin: 10px 0 10px 0;
+}
+
+.image-block_blogs {
+  padding: 5px;
+  width: 35%;
+}
+
+.image-block_blogs img{
+    background-size: cover;
+}
+
+.content-block_blogs {
+  float: left;
+  width: 65%;
+  padding: 5px 5px 5px 0px;
+}
+.content_news {
+  width: 100%;
+  height: 70%;
+  color: var(--green);
+  font-size: 2rem;
+}
+
+.lower-content_blogs {
+  display: flex;
+  width: 100%;
+  float: left;
+  height: 30%;
+}
+
+.post_btn {
+  font-size: 1.5rem;
+  padding-top: 35px;
+  width: 30%;
+  color: var(--green);
+  text-align: start;
+}
+
+.btn_post{
+  padding-top: 24px;
+  width: 70%;
+  text-align: end;
+}
+
+/* img {
+  width: 100%;
+  height: auto;
+} */
+/* .blogs_container {
+  max-width: 1200px;
+  display: flex;
+  border: 2px solid;
+  margin: 10px 0px 10px 0px;
+}
+
+.container_news {
+  display: flex;
+} */
 
 .category .box-container {
   display: grid;
@@ -431,9 +504,9 @@ section {
 }
 
 .product .box-container .box .price {
-  font-weight: bolder;
+  font-weight: bold;
   color: var(--green);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .product .box-container .box .price span {
