@@ -42,19 +42,19 @@
     <div class="banner">
       <img src="images/5.jpg" alt="" />
       <div class="content">
-        <span>Новинка</span>
-        <h3>Кольца</h3>
-        <a href="#" class="btn">Купить</a>
+        {{-- <span>Новинка</span> --}}
+        <h3>Новинки от Иринки</h3>
+        <a href="/feed" class="btn">Подробнее</a>
       </div>
     </div>
-    <div class="banner">
+    {{-- <div class="banner">
       <img src="images/002.jpg" alt="" />
       <div class="content">
         <span>Новинка</span>
         <h3>Браслеты 2024</h3>
         <a href="#" class="btn">Купить</a>
       </div>
-    </div>
+    </div> --}}
   </section>
 
   <section class="category" id="category">

@@ -26,6 +26,7 @@ Route::get('/',[Controllers\BaseController::class, 'getIndex']);
 Route::get('catalog/{catalog}', [Controllers\CatalogController::class,'getIndex']); //делаем страницу с каталогом
 Route::get('product/{product}', [Controllers\ProductController::class, 'getOne']);
 Route::get('blog', [Controllers\BlogController::class, 'getIndex']);
+Route::get('feed', [Controllers\FeedController::class, 'getIndex']);
 Route::get('blog/{blog}', [Controllers\BlogController::class, 'getOne']);
 Route::get('/dashboard', function () {
     return view('dashboard');
