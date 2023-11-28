@@ -113,7 +113,7 @@
 
   <section class="deal" id="deal">
     <h1 class="heading">Сделка недели</h1>
-
+ <a name="deal"></a>
     <div class="row">
       <div class="content">
         <h3 class="title">Спецпредложение: 3 по цене 1</h3>

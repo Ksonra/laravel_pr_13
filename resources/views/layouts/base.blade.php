@@ -16,6 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/style.css" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -47,10 +50,10 @@
           <div id="menu-bar" class="fas fa-bars"></div>
 
           <nav class="navbar">
-            <a href="#home">Домой</a>
+            <a href="/">Домой</a>
             <a href="#category">Категории</a>
             <a href="/products"><span class="hot">SALE</span></a>
-            <a href="#deal">Сделка недели</a>
+            <a href="/#deal">Сделка недели</a>
             <a href="/blog">Блог</a>
             <a href="#contact">Контакты</a>
 
@@ -83,10 +86,10 @@
         </div>
         <div class="box">
           <h3>Быстрые ссылки:</h3>
-          <a href="#">Домой</a>
+          <a href="/">Домой</a>
           <a href="#">Категории</a>
-          <a href="#product"><span class="hot">SALE</span></a>
-          <a href="#">Сделка недели</a>
+          <a href="/products"><span class="hot">SALE</span></a>
+          <a href="/#deal">Сделка недели</a>
           <a href="#">Контакты</a>
         </div>
         <div class="box">
@@ -113,7 +116,8 @@
     <br />
     <div class="scroll-top fas fa-angle-up"></div>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
   </body>
 </html>
