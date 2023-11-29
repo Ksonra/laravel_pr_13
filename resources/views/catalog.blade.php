@@ -27,7 +27,6 @@
             </div>
     </form>
     <section class="category" id="category">
-
         <div class="grid grid-cols-2">
             <div class="">
                 <div x-data="{ price: {{(request()->price_min)?request()->price_min:$min_price}} }" class="w-full">

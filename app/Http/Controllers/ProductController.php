@@ -7,20 +7,23 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function getIndex(){
+    public function getIndex()
+    {
         $products = Product::whereNotNull('discount')->get();
-        return view('products',compact('products'));
+        return view('products', compact('products'));
     }
-    public function getOne(Product $product){
+    public function getOne(Product $product)
+    {
         return view('product', compact('product'));
     }
-    public function getAll(Request $request){
-        if ($request->search){
-            $products=Product::where('name','like','%'.$request->search.'%')->get();
-        } else{
-            $products = Product::all();
-        }
-
-        return view('products',compact('products'));
+    public function getAll(Request $request)
+    {
+        // if ($request->search){
+        //     $products=Product::where('name','like','%'.$request->search.'%')->get();
+        // } else{
+        //     $products = Product::all();
+        // }
+        $products = Product::filter($request->all())->simplePaginate(12);
+        return view('products', compact('products'));
     }
 }

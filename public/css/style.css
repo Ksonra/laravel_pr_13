@@ -3,7 +3,7 @@
 :root {
   --green: #bf6547;
   --yellow: #ebdcb2;
-  --black: #dea035;
+  --black: #e4a436;
   --white: #fff;
   --light-color: #b25238;
   --light-bg: #fcf2e7;
@@ -319,6 +319,7 @@ section {
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid;
+  border-color: var(--green);
   margin: 10px 0 10px 0;
 }
 
@@ -659,7 +660,7 @@ section {
   margin: 1.5rem 0;
   font-size: 1.7rem;
   text-transform: none;
-  color: var(--black);
+  color: var(--green);
 }
 
 .contact .row form .inputBox textarea {
@@ -675,16 +676,17 @@ section {
 .contact .row form .inputBox label {
   position: absolute;
   top: 2.3rem;
-  left: 0;
+  left: 15px;
   font-size: 1.7rem;
+  color: var(--green);
 }
 
 .contact .row form .inputBox input:focus ~ label,
 .contact .row form .inputBox textarea:focus ~ label,
 .contact .row form .inputBox input:valid ~ label,
 .contact .row form .inputBox textarea:valid ~ label {
-  top: -0.1rem;
-  font-size: 1.5rem;
+  top: -1rem;
+  font-size: 1.2rem;
   color: var(--light-color);
 }
 
@@ -721,7 +723,7 @@ section {
   display: block;
   color: var(--light-color);
   font-size: 1.6rem;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
 
 .footer .box-container .box a:hover {
