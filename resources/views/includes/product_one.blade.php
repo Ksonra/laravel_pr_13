@@ -2,10 +2,9 @@
     @if ($product->discount)
     <span class="discount">-{{$product->discount}}%</span>
     @endif
-
     <div class="icons">
         <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="{{asset('add_cart/'.$product->id)}}" class="fas fa-shopping-cart"></a>
     </div>
     <img src="{{asset('/storage/'.$product->picture)}}" alt="Image">
     <h3>{{$product->name}}</h3>
@@ -18,3 +17,4 @@
     </div>
     <a href="{{asset('product/'.$product->id)}}" class="btn">Подробнее о товаре</a>
 </div>
+

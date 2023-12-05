@@ -9,6 +9,10 @@
            {!!$product->body!!}
            <img src="{{asset('/storage/'.$product->picture)}}" alt="">
         </div>
+        <div class="icons">
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
     </div>
   </section>
 @endsection

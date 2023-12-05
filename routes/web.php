@@ -29,6 +29,8 @@ Route::get('blog', [Controllers\BlogController::class, 'getIndex']);
 Route::get('feed', [Controllers\FeedController::class, 'getIndex']);
 // Route::get('search', [Controllers\ProductController::class, 'getIndex']);
 Route::get('blog/{blog}', [Controllers\BlogController::class, 'getOne']);
+Route::get('add_cart/{id}', [Controllers\OrderController::class, 'addCookie']);
+Route::get('cart', [Controllers\OrderController::class, 'cart'])->name('cart');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
