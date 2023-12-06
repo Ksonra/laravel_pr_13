@@ -24,21 +24,40 @@ class OrderController extends Controller
             $order = $id . ':1';
         }
         setCookie('order', $order, time() + 3600, '/');
-        return redirect()->to('cart');
+        return redirect()->back();
     }
     public function cart()
     {
         $order_arr = [];
         $products = [];
+        $itogo = 0;
         if (isset($_COOKIE['order'])) {
             $order_arr = explode(',', $_COOKIE['order']);
         }
         foreach ($order_arr as $value) {
             if ($value)
                 $prod_ids = explode(':', $value);
-            $products[$prod_ids[0]] = Product::find($prod_ids[0]);
+                $prod = Product::find($prod_ids[0]);
+                $itogo += (float) $prod->price-(($prod->price*$prod->discount)/100);
+                $products[$prod_ids[0]] = $prod;
         }
 
-        return view('cart', compact('products'));
+        return view('cart', compact('products', 'itogo'));
+    }
+    public function cartDelete(Product $product)
+    {
+        if (isset($_COOKIE['order'])) {
+            $order_new = [];
+            $order_arr = explode(',', $_COOKIE['order']);
+            foreach ($order_arr as $keys) {
+                $key_arr = explode(':', $keys);
+                if ($key_arr[0] != $product->id) {
+                    $order_new[$key_arr[0]] = $keys;
+                }
+            }
+            $order = implode(',', $order_new);
+            setcookie('order', $order, time() + 3600, '/');
+        }
+        return redirect()->back();
     }
 }

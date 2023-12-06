@@ -52,7 +52,7 @@
                 </nav>
 
                 <div class="icons">
-                    <a href="/cart" class="fas fa-shopping-cart"></a>
+                    <a href="/cart" class="fas fa-shopping-cart"><span>{{(isset($_COOKIE['order']))?count(explode(',', $_COOKIE['order'])):0}}</span></a>
                     <a href="#" class="fas fa-heart"></a>
                     @guest()
                         <a href="/login" class="fas fa-user-circle">Login</a>
