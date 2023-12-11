@@ -37,9 +37,9 @@ class OrderController extends Controller
         foreach ($order_arr as $value) {
             if ($value)
                 $prod_ids = explode(':', $value);
-                $prod = Product::find($prod_ids[0]);
-                $itogo += (float) $prod->price-(($prod->price*$prod->discount)/100);
-                $products[$prod_ids[0]] = $prod;
+            $prod = Product::find($prod_ids[0]);
+            $itogo += (float) $prod->price - (($prod->price * $prod->discount) / 100);
+            $products[$prod_ids[0]] = $prod;
         }
 
         return view('cart', compact('products', 'itogo'));
@@ -59,5 +59,19 @@ class OrderController extends Controller
             setcookie('order', $order, time() + 3600, '/');
         }
         return redirect()->back();
+    }
+
+    public function formOrder(Request $request)
+    {
+        $order_req = $request->all();
+        // abort_if(!optional($order_req)->first(), 418, 'Error_request');
+        $prod_arr = [];
+        $prod_count = [];
+        foreach ($order_req as $key => $value) {
+            $key_ids = explode('_', $key);
+            $prod_arr[$key_ids[1]] = Product::find($key_ids[1]);
+            $prod_count[$key_ids[1]] = $value;
+        }
+        return view('form_order', compact ('prod_arr', 'prod_count'));
     }
 }
