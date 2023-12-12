@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -73,5 +75,20 @@ class OrderController extends Controller
             $prod_count[$key_ids[1]] = $value;
         }
         return view('form_order', compact ('prod_arr', 'prod_count'));
+    }
+
+    public function formSave (Request $request){
+       $serialize_products = serialize($request->product);
+       $new_order = new Order;
+       $new_order->ip_address = $request->ip();
+       $new_order->user_id = optional(Auth::user())->id;
+       $new_order->name = $request->name;
+       $new_order->email = $request->email ?? '';
+       $new_order->phone = $request->phone;
+       $new_order->details = $request->details;
+       $new_order->body = $serialize_products;
+       $new_order->save();
+       setcookie('order', '', time()-1, '/');
+       return redirect('thankyourpage');
     }
 }

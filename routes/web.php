@@ -32,6 +32,7 @@ Route::get('blog/{blog}', [Controllers\BlogController::class, 'getOne']);
 Route::get('add_cart/{id}', [Controllers\OrderController::class, 'addCookie']);
 Route::get('cart', [Controllers\OrderController::class, 'cart'])->name('cart');
 Route::get('cart/form_order', [Controllers\OrderController::class, 'formOrder']);
+Route::post('cart/form_save', [Controllers\OrderController::class, 'formSave']);
 Route::get('cart/delete/{product}', [Controllers\OrderController::class, 'cartDelete']);
 Route::get('/dashboard', function () {
     return view('dashboard');
