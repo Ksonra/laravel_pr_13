@@ -110,15 +110,12 @@
     </div>
 
     <section class="deal" id="deal">
-        <h1 class="heading">Сделка недели</h1>
+        <h3 class="heading">Черный ящик</h3>
         <a name="deal"></a>
         <div class="row">
             <div class="content">
-                <h3 class="title">Спецпредложение: 3 по цене 1</h3>
-                <p>
-                    Уникальное торговое предложение на самый популярный товар месяца.
-                    Предложение ограничено!
-                </p>
+                <h3 class="title">Cлучайный товар по специальной цене.</h3>
+                    <p> Риск бывает оправдан! </p>
                 <div class="count-down">
                     <div class="box">
                         <h3 id="day">00</h3>
@@ -137,11 +134,11 @@
                         <span>секунд</span>
                     </div>
                 </div>
-                <a href="#" class="btn">Забирай меня!</a>
+                <a href="black_box" class="btn">Забирай меня!</a>
             </div>
 
             <div class="image">
-                <img src="images/22.webp" alt="" />
+                <img src="images/blackbox.png" alt="" />
             </div>
         </div>
     </section>

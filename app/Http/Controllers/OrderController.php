@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
 {
@@ -77,7 +78,7 @@ class OrderController extends Controller
         return view('form_order', compact ('prod_arr', 'prod_count'));
     }
 
-    public function formSave (Request $request){
+    public function formSave (OrderRequest $request){
        $serialize_products = serialize($request->product);
        $new_order = new Order;
        $new_order->ip_address = $request->ip();

@@ -1,5 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
+@extends('layouts.base')
+@section('content')
+        <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ $maintext->name }}
         </h2>
@@ -14,4 +15,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    @endsection
