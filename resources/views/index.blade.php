@@ -1,4 +1,7 @@
 @extends('layouts.base')
+@push('scripts')
+<script src="{{ asset('js/script.js') }}"></script>
+@endpush
 @section('content')
     <section class="home" id="home">
         <div class="swiper home-slider">

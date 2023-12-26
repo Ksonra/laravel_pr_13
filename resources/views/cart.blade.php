@@ -7,10 +7,7 @@
                     <div class="col-10">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h3 class="fw-normal mb-0 text-black">Корзина заказа:</h3>
-                            <div>
-                                <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
-                                        class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
-                            </div>
+
                         </div>
 
                         <div x-data="{
@@ -18,9 +15,16 @@
                             async itogo_func() {
                                 let summa = 0;
                                 @foreach ($products as $product)
-                                summa += (document.getElementById('product{{$product->id}}').value) * {{ $product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price }};
+                                @if (isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id)
+                                let my_var += 100;
+                                summa += my_var;
+                                @else
+                                let my_var += (document.getElementById('product{{ $product->id }}').value) *{{ $product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price }};
+                                summa += my_var;
+                                @endif
+
                                 @endforeach
-                                this.itogo =summa;
+                                this.itogo = summa;
                             },
                         }">
                             @foreach ($products as $product)
@@ -29,22 +33,30 @@
                                             this.summa{{ $product->id }} = {{ $product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price }} * this.count{{ $product->id }}
                                             console.log(this.summa{{ $product->id }});
                                         },
-                                        'summa{{ $product->id }}': '{{ $product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price }}',
-                                        'count{{ $product->id }}':1
+                                        'summa{{ $product->id }}': '{{ isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id ? '100' : ($product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price) }}',
+                                        'count{{ $product->id }}': 1
                                 }">
 
                                     <div class="card-body p-4">
                                         <div class="row d-flex justify-content-between align-items-center">
                                             <div class="col-md-2 col-lg-2 col-xl-2">
-                                                <img src="{{ asset('/storage/' . $product->picture) }}" alt="image"
-                                                    class="img-fluid rounded-3">
+                                                <img src="{{ asset(isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id ? '/images/blackbox.png' : 'storage/' . $product->picture) }}"
+                                                    class="img-fluid rounded-3" />
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-xl-3">
-                                                <p class="lead fw-normal mb-2">{{ $product->name }}</p>
+                                                <p class="lead fw-normal mb-2">
+                                                    @if (isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id)
+                                                        Секретный товар
+                                                    @else
+                                                        {{ $product->name }}
+                                                    @endif
+                                                </p>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                                 <button class="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                    @click.prevent="count{{ $product->id }}--;
+                                                change_count_{{ $product->id }}();
+                                                itogo_func();">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
 
@@ -52,13 +64,11 @@
                                                     name="product_{{ $product->id }}" type="number"
                                                     class="form-control form-control-sm"
                                                     @change="change_count_{{ $product->id }}; itogo_func();"
-                                                    x-model="count{{ $product->id }}" autocomplete="off"  />
+                                                    x-model="count{{ $product->id }}" autocomplete="off" />
                                                 <button class="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp();
-                                                let sums = document.getElementById('product{{ $product->id }}');
-                                                console.log(sums)
-                                                sums.dispatchEvent(new Event('change'));
-                                                change_count_{{ $product->id }}();">
+                                                    @click.prevent="count{{ $product->id }}++;
+                                                change_count_{{ $product->id }}();
+                                                itogo_func();">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
@@ -66,7 +76,7 @@
                                                 <div class="price" x-text = 'summa{{ $product->id }}'>
 
                                                 </div>
-                                                {{-- <h5 class="mb-0">$499.00</h5> --}}
+
                                             </div>
                                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                                 <a href="{{ asset('cart/delete/' . $product->id) }}" class="text-danger"><i
@@ -83,17 +93,7 @@
 
 
 
-                        <div class="card mb-4">
-                            <div class="card-body p-4 d-flex flex-row">
-                                <div class="form-outline flex-fill">
-                                    <input type="text" id="form1" class="form-control form-control-lg" />
-                                    <label class="form-label" for="form1">
-                                        <h2>Подарочный код</h2>
-                                    </label>
-                                </div>
-                                <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
-                            </div>
-                        </div>
+
 
                         <div class="card">
                             <div class="card-body">

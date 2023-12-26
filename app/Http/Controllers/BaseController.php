@@ -24,7 +24,7 @@ class BaseController extends Controller
     public function getBox()
     {
         $random = Product::orderBy(DB::raw('RAND()'))->first();
-        setCookie('random_id', $random->id, time()+3600, '/');
+        setCookie('random_id_'.$random->id, $random->id, time()+3600, '/');
         return redirect('add_cart/'.$random->id);
     }
 }
