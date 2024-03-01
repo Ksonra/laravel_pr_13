@@ -48,15 +48,19 @@
         </div>
 
         <h1 class="heading"> {{ $catalog->name }} </h1>
-
+    <section class="product" id="product">
         <div class="box-container">
             @foreach ($products as $product)
 
                 <div class="box">
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>
-                        <a href="{{asset('add_cart/'.$product->id)}}" class="fas fa-shopping-cart"></a>
+                        <a href="#" class="fas fa-eye"></a>
                     </div>
+                    {{-- <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="{{asset('add_cart/'.$product->id)}}" class="fas fa-shopping-cart"></a>
+                    </div> --}}
                     <img src="/storage/{{ $product->picture }}" alt="" />
                     <div class="content">
                         <h2>{{ $product->name }}</h2>
@@ -82,6 +86,7 @@
             @endforeach
         @endif
         </div>
+    </section>
     </section>
     </div>
 @endsection

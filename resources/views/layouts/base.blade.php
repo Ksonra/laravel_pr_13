@@ -31,7 +31,7 @@
                     @csrf
                     <input name="search" type="search" id="search-bar" placeholder="Что будем искать?.." />
                     <label for="search-bar" class="fas fa-search">
-                        <input type="submit" value="search">
+                        <input type="submit" value="">
                     </label>
                 </form>
             </section>
@@ -45,7 +45,7 @@
                     <a href="/">Домой</a>
                     <a href="#category">Категории</a>
                     <a href="/products"><span class="hot">SALE</span></a>
-                    <a href="/#deal">Сделка недели</a>
+                    <a href="/#deal">Ящик пандоры</a>
                     <a href="/blog">Блог</a>
                     <a href="#contact">Контакты</a>
 
@@ -96,7 +96,7 @@
                 <a href="/">Домой</a>
                 <a href="#">Категории</a>
                 <a href="/products"><span class="hot">SALE</span></a>
-                <a href="/#deal">Сделка недели</a>
+                <a href="/#deal">Ящик пандоры</a>
                 <a href="#">Контакты</a>
             </div>
             <div class="box">

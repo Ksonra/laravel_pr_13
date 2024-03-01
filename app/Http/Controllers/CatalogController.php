@@ -9,7 +9,7 @@ use App\Models\Product;
 class CatalogController extends Controller
 {
     public function getIndex(Request $request, Catalog $catalog){
-        $products = Product::filter($request->all())->simplePaginate(12);
+        $products = Product::filter($request->all())->where('catalog_id',$catalog->id)->simplePaginate(12);
         // $prods = Product::all();
         // $min_price = $prods->sortBy('price')->first()->price;
         // $max_price = $prods->sortByDesc('price')->first()->price;
