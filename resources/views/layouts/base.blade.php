@@ -53,11 +53,12 @@
 
                 <div class="icons">
                     <a href="/cart" class="fas fa-shopping-cart"><span>{{(isset($_COOKIE['order']))?count(explode(',', $_COOKIE['order'])):0}}</span></a>
-                    <a href="#" class="fas fa-heart"></a>
+
                     @guest()
                         <a href="/login" class="fas fa-user-circle">Login</a>
                         <a href="/register" class="fas fa-user-circle">Register</a>
                     @else
+                        <a href="#" class="fas fa-heart">{{App\Models\Favorite::where('user_id', auth()->user()->id)->count()}}</a>
                         <a href="/profile" class="fas fa-user-circle">LK</a>
                         <a href="{{ route('logout') }}" class="fas fa-user-circle"
                             onclick="event.preventDefault();
