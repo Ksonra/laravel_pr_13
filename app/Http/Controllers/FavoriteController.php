@@ -17,4 +17,14 @@ class FavoriteController extends Controller
         ]);
         return redirect()->back();
       }
+
+      public function getMy(){
+        $favorites = Favorite::where('user_id', Auth::user()->id)->get();
+        return view('favorite', compact('favorites'));
+    }
+
+    public function getDel(Favorite $favorite){
+        Favorite::where('id', $favorite->id)->where('user_id', Auth::user()->id)->delete();
+        return redirect()->back();
+    }
 }

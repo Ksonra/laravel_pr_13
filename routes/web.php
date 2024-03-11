@@ -41,8 +41,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('favorite', [Controllers\FavoriteController::class, 'getMy']);
     Route::get('/favorite/{product}/add', [Controllers\FavoriteController::class, 'getAdd']);
-    Route::get('/favorite/{product}/del', [Controllers\FavoriteController::class, 'getDel']);
+    Route::get('/favorite/{favorite}/del', [Controllers\FavoriteController::class, 'getDel']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
