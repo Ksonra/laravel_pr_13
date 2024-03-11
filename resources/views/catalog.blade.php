@@ -4,30 +4,42 @@
         <div class="container_filter">
             <div class="filter">
                 <br>
-                {{-- <div class="grid grid-cols-2">
-                    <div class="">
-                        <div x-data="{ price: {{(request()->price_min)?request()->price_min:$min_price}} }" class="w-full">
-                            <label for="price" class="font-bold text-gray-700" x-text="'от'  + price"></label>
+                <div class="grid grid-cols-2">
+                    <div>
+                        <div x-data="{ price: {{ request()->price_min ? request()->price_min : $min_price }} }" class="w-full">
+                            <label for="price" class="font-bold text-gray-700 block text-left"
+                                x-text="'от'  + price"></label>
                             <input type="range" min="{{ $min_price }}" name="price_min" max="{{ $avg_price }}"
-                                x-model="price" class="w-full h-2 bg-blue-100 appearance-none"/>
+                                x-model="price" class="w-full h-2 bg-yellow-100 appearance-none" />
                         </div>
                     </div>
                     <div>
-                        <div x-data="{ price: {{(request()->price_max)?request()->price_max:$max_price}}}" class="w-full">
+                        <div x-data="{ price: {{ request()->price_max ? request()->price_max : $max_price }} }" class="w-full">
                             <label for="price" class="font-bold text-gray-700 block text-right"
                                 x-text="'до'  + price"></label>
                             <input type="range" min="{{ $avg_price }}" name="price_max" max="{{ $max_price }}"
-                                x-model="price" class="w-full h-2 bg-blue-100 appearance-none"/>
+                                x-model="price" class="w-full h-2 bg-yellow-100 appearance-none" />
                         </div>
                     </div>
                 </div>
                 <div class="text-center text-sm mt-2">
-                    <button type="submit" class="btn2">Сортировать по цене</button>
-                </div> --}}
+                    <button class="btn2">Сортировать по цене</button>
+                </div>
+                <div text-center text-sm mt-2>
+                    <select class="btn2">
+                        <option >
+                            Материал
+                        </option>
+                        <option value="золото">Золото</option>
+                        <option value="серебро">Серебро</option>
+                        <option value="комбинированная">комбинированная</option>
+                    </select>
+                </div>
             </div>
+
     </form>
     <section class="category" id="category">
-        <div class="grid grid-cols-2">
+        {{-- <div class="grid grid-cols-2">
             <div class="">
                 <div x-data="{ price: {{ request()->price_min ? request()->price_min : $min_price }} }" class="w-full">
                     <label for="price" class="font-bold text-gray-700" x-text="'от'  + price"></label>
@@ -45,8 +57,7 @@
         </div>
         <div class="text-center text-sm mt-2">
             <button type="submit" class="btn2">Сортировать по цене</button>
-        </div>
-
+        </div> --}}
         <h1 class="heading"> {{ $catalog->name }} </h1>
         <section class="product" id="product">
             <div class="box-container">

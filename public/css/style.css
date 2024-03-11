@@ -69,8 +69,13 @@ section {
     padding: 1rem 3rem;
     background: var(--green);
     color: var(--white);
-    font-size: 1.7rem;
+    font-size: larger;
     cursor: pointer;
+    text-align: center;
+}
+
+.filter{
+    margin-left: 10px;
 }
 
 .btn2:hover {
@@ -346,6 +351,8 @@ section {
   font-size: 2rem;
 }
 
+
+
 .content_news div {
     padding-top: 2rem;
 }
@@ -530,11 +537,12 @@ section {
 
 .container_filter {
     display: flex;
+    text-align: center;
 }
 
-.fiter {
+/* .filter {
     width: 20%;
-}
+} */
 
 /* .product .box-container .box .quantity {
   padding: 1rem 0;
