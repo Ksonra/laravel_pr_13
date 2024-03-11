@@ -43,12 +43,11 @@
 
                 <nav class="navbar">
                     <a href="/">Домой</a>
-                    <a href="#category">Категории</a>
+                    <a href="/#category">Категории</a>
                     <a href="/products"><span class="hot">SALE</span></a>
                     <a href="/#deal">Ящик пандоры</a>
                     <a href="/blog">Блог</a>
                     <a href="/#contact">Контакты</a>
-
                 </nav>
 
                 <div class="icons">

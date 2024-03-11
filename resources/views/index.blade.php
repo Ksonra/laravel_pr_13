@@ -9,9 +9,9 @@
                 <div class="swiper-slide">
                     <div class="box" style="background: url(images/11.jpg);">
                         <div class="content">
-                            <span>Скидка 75% </span>
-                            <h3>Знойный сентябрь</h3>
-                            <a href="#" class="btn">Читать подробнее</a>
+                            {{-- <span>Скидка 75% </span> --}}
+                            <h3>Солнечный март</h3>
+                            <a href="/blog/5" class="btn">Читать подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <div class="content">
                             <span>Скидка до 45% </span>
                             <h3>Больше-дешевле</h3>
-                            <a href="#" class="btn">Читать подробнее</a>
+                            <a href="/blog/4" class="btn">Читать подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <h3>Скидки</h3>
                             <h3>за</h3>
                             <h3>идеи</h3>
-                            <a href="#" class="btn">Читать подробнее</a>
+                            <a href="/blog/5" class="btn">Читать подробнее</a>
                         </div>
                     </div>
                 </div>

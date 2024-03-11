@@ -3,7 +3,7 @@
     <span class="discount">-{{$product->discount}}%</span>
     @endif
     <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
+        <a href="{{ asset('favorite/' . $product->id . '/add') }}" class="fas fa-heart"></a>
         <a href="{{asset('add_cart/'.$product->id)}}" class="fas fa-shopping-cart"></a>
     </div>
     <img src="{{asset('/storage/'.$product->picture)}}" alt="Image">

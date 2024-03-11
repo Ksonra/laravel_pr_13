@@ -17,7 +17,7 @@
                                 <h2 class="strike">{{ $favorite->product->discount}}$</h2>
                                 <h2>{{ $favorite->product->price - ($favorite->product->price * $favorite->product->discount) / 100 }}$</h2>
                             @else
-                                <h3 class="price">{{ $favorite->product->discount }}$</h3>
+                                <h3 class="price">{{ $favorite->product->price }}$</h3>
                             @endif
                             <a href="{{ asset('product/' . $favorite->product->id) }}" class="btn">Описание</a>
                         </div>

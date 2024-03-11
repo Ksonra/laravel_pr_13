@@ -1,8 +1,8 @@
 @extends('layouts.base')
 @section('content')
     <section class="category" id="category">
-        <h1 class="heading">
-            <a href="{{ asset('all/') }}"> Весь ассортимент </a>
+        <h2 class="heading text-left">
+            <a href="{{ asset('/allproducts') }}"> Весь ассортимент </a>
             <a href="{{ asset('catalog/' . $product->catalog->id) }}"> <-{{ $product->catalog->name }} <-
                     {{ $product->name }} </a></h2>
 
@@ -26,8 +26,8 @@
                                 </div>
                             </div>
                                 <div class="icons_one">
-                                    <a href="#" class="fas fa-shopping-cart"></a>
-                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="{{ asset('add_cart/' . $product->id) }}" class="fas fa-shopping-cart"></a>
+                                    <a href="{{ asset('favorite/' . $product->id . '/del') }}" class="fas fa-heart"></a>
                                 </div>
                         </div>
                     </div>
