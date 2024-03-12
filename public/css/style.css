@@ -348,7 +348,7 @@ section {
   width: 100%;
   height: 70%;
   color: var(--green);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 
@@ -505,13 +505,21 @@ section {
     bottom: 1rem;
 }
 .icons_one a {
+    text-align: center;
     height: 5rem;
     width: 5rem;
-    line-height: 5.5rem;
-    font-size: 2.5rem;
+    line-height: 12.5rem;
+    font-size: 2rem;
     color: var(--black);
-    border-radius: 5rem;
-    margin: 0.1rem;
+    /* border-radius: 5rem; */
+    /* margin: 0.1rem; */
+
+    /* position: absolute; */
+    /* display: flex; */
+    /* background: var(--white);
+    border-radius: 5rem; */
+    /* padding: 0.5rem;
+    box-shadow: var(--box-shadow); */
 }
 .icons_one a:hover {
     color: var(--white);
@@ -571,9 +579,17 @@ section {
   font-size: 1.5rem;
 }
 
+.fix_bottom{
+    bottom: 0px;
+}
+
 .product .box-container .box .btn {
   display: block;
   margin: 2rem;
+}
+
+.out{
+    height: 350px;
 }
 
 .icons-container {
@@ -648,7 +664,7 @@ section {
 .deal .row .content .count-down .box {
   width: 9rem;
   text-align: center;
-  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  border: 0.1rem solid var(--black);
 }
 
 .deal .row .content .count-down .box h3 {
@@ -667,7 +683,7 @@ section {
 .contact .row {
   display: flex;
   flex-wrap: wrap;
-  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  border: 0.1rem solid var(--green);
 }
 
 .contact .row .map {
@@ -676,7 +692,7 @@ section {
 }
 
 .contact .row form {
-  padding: 2rem;
+  padding: 1rem;
   flex: 1 1 40rem;
 }
 
@@ -687,12 +703,12 @@ section {
 .contact .row form .inputBox input,
 .contact .row form .inputBox textarea {
   width: 100%;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
-  padding: 1rem 0;
+  border: 0.2rem solid var(--green);
+  padding: 1rem 0 1rem 2rem;
   margin: 1.5rem 0;
   font-size: 1.7rem;
   text-transform: none;
-  color: var(--green);
+  color: var(--black);
 }
 
 .contact .row form .inputBox textarea {
@@ -710,7 +726,7 @@ section {
   top: 2.3rem;
   left: 15px;
   font-size: 1.7rem;
-  color: var(--green);
+  color: var(--black);
 }
 
 .contact .row form .inputBox input:focus ~ label,

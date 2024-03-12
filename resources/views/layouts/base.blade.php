@@ -30,9 +30,9 @@
                 <form action="{{ asset('allproducts') }}" class="search-bar-container">
                     @csrf
                     <input name="search" type="search" id="search-bar" placeholder="Что будем искать?.." />
-                    <label for="search-bar" class="fas fa-search">
-                        <input type="submit" value="">
-                    </label>
+                    {{-- <label for="search-bar" class="fas fa-search">
+                        <input type="submit" value=""></input>
+                    </label> --}}
                 </form>
             </section>
         </div>
@@ -77,7 +77,7 @@
     @yield('content')
 
 
-    <footer class="footer">
+    <footer class="footer  fix_bottom">
         <section class="box-container">
             <div class="box">
                 <h3>О нас</h3>
@@ -87,17 +87,18 @@
             </div>
             <div class="box">
                 <h3>Зона доставки</h3>
-                <a href="#">USA</a>
-                <a href="#">Беларусь</a>
-                <a href="#">Европа</a>
+                <p>USA</p>
+                <p>Беларусь</p>
+                <p>Европа</p>
             </div>
             <div class="box">
                 <h3>Быстрые ссылки:</h3>
                 <a href="/">Домой</a>
-                <a href="#">Категории</a>
+                <a href="/#category">Категории</a>
                 <a href="/products"><span class="hot">SALE</span></a>
+                <a href="/blog">Блог</a>
                 <a href="/#deal">Ящик пандоры</a>
-                <a href="#">Контакты</a>
+
             </div>
             <div class="box">
                 <h3>Следи за мной:</h3>
@@ -123,7 +124,7 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+    <script src="{{ asset('js/script.js') }}"></script>
     @stack('scripts')
 
 </body>

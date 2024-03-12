@@ -1,7 +1,4 @@
 @extends('layouts.base')
-@push('scripts')
-<script src="{{ asset('js/script.js') }}"></script>
-@endpush
 @section('content')
     <section class="home" id="home">
         <div class="swiper home-slider">
@@ -157,7 +154,7 @@
 
             <form action="">
                 <div class="inputBox">
-                    <input type="text" required />
+                    <input type="text" class="p-l-5" required />
                     <label> Имя</label>
                 </div>
                 <div class="inputBox">

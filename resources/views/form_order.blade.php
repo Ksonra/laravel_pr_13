@@ -21,12 +21,28 @@
                 @endphp
                 @foreach ($prod_arr as $product)
                     @php
-                        $summa = ($product->discount ? (float) ($product->price * $product->discount) / 100 : (float) $product->price) * $prod_count[$product->id];
+                        if (
+                            isset($_COOKIE['random_id_' . $product->id]) &&
+                            $_COOKIE['random_id_' . $product->id] == $product->id
+                        ) {
+                            $summa = 100 * $prod_count[$product->id];
+                        } else {
+                            $summa =
+                                ($product->discount
+                                    ? (float) ($product->price * $product->discount) / 100
+                                    : (float) $product->price) * $prod_count[$product->id];
+                        }
                         $itogo += $summa;
                     @endphp
                     <input type="hidden" name="product[{{ $product->id }}]" value="{{ $prod_count[$product->id] }}">
                     <tr>
-                        <td>{{ $product->name }}</td>
+                        <td>
+                            @if (isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id)
+                                Секретный товар
+                            @else
+                                {{ $product->name }}
+                            @endif
+                        </td>
                         <td>{{ $prod_count[$product->id] }}</td>
                         <td>{{ $summa }}</td>
                     </tr>
@@ -38,7 +54,7 @@
                 </tr>
             </table>
             <div class="grid grid-cols-2">
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l flex flex-col">
+                <div class="p-6 border border-yellow-200 dark:border-yellow-700 md:border-l flex flex-col">
                     <label for="name" class="block">
                         {{-- <span class="text-gray-700">Имя</span> --}}
                         @if ($errors->has('name'))
@@ -53,8 +69,8 @@
                         @if ($errors->has('email'))
                             {{ $errors->first('email') }}
                         @endif
-                        <input class="block w-full mt-1 form-input" id="email" name="email" placeholder="Email" autocomplete="off"
-                            type="email" required="">
+                        <input class="block w-full mt-1 form-input" id="email" name="email" placeholder="Email"
+                            autocomplete="off" type="email" required="">
                     </label>
 
                     {{-- <div class="form-group">
@@ -70,24 +86,24 @@
                         @if ($errors->has('phone'))
                             {{ $errors->first('phone') }}
                         @endif
-                        <input class="block w-full mt-1 form-input" id="phone" name="phone" placeholder="+375(__) ___ __ __" autocomplete="off"
-                            type="tel">
+                        <input class="block w-full mt-1 form-input" id="phone" name="phone"
+                            placeholder="+375(__) ___ __ __" autocomplete="off" type="tel">
                     </label>
 
                 </div>
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-r flex flex-col">
+                <div class="p-6 border border-yellow-200 dark:border-yellow-700 md:border-r flex flex-col">
                     <label class="block ">
                         {{-- <span class="text-gray-700">Комментарии к заказу: (необязательно)</span> --}}
-                        <textarea class="block w-full mt-1 form-textarea" placeholder="Комментарии к заказу: (необязательно)" wire:model="message" name="details" rows="3"
-                            placeholder="Детали"></textarea>
+                        <textarea class="block w-full mt-1 form-textarea" placeholder="Комментарии к заказу: (необязательно)"
+                            wire:model="message" name="details" rows="3" placeholder="Детали"></textarea>
                     </label>
 
-                    <button
-                        class="px-4 py-2 mt-8 font-semibold text-gray-800 bg-white border border-gray-300 rounded shadow hover:bg-gray-100">
+                    <button class="btn">
                         Подтвердить заказ
                     </button>
                 </div>
             </div>
+            <div class="out"></div>
             {{-- <div class="card mb-4">
         <div class="card-body p-4 d-flex flex-row">
             <div class="form-outline flex-fill">
@@ -99,11 +115,11 @@
             <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
         </div>
     </div> --}}
-
+            {{--
             <div class="card">
                 <div class="card-body">
                     <button type="button" class="btn btn-warning btn-block btn-lg">Купить</button>
-                </div>
+                </div> --}}
             </div>
         </form>
     </section>

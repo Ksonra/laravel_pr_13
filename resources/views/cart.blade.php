@@ -86,9 +86,9 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                            {{-- <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                 Итоговая сумма:<div x-text='itogo'></div>
-                            </div>
+                            </div> --}}
                         </div>
 
 
