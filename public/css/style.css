@@ -73,9 +73,20 @@ section {
     cursor: pointer;
     text-align: center;
 }
+.btn3{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    background: var(--green);
+    color: var(--white);
+    font-size: larger;
+    cursor: pointer;
+    text-align: center;
+}
 
 .filter{
     margin-left: 10px;
+    padding: 10px;
 }
 
 .btn2:hover {
@@ -710,6 +721,11 @@ section {
   text-transform: none;
   color: var(--black);
 }
+
+/* .email{
+background-color: var(--black);
+color: var(--black);
+} */
 
 .contact .row form .inputBox textarea {
   resize: none;
