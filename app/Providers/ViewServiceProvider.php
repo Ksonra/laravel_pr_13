@@ -20,6 +20,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('catalog', 'App\Providers\ViewComposers\ProductsComposer');
+        View::composer(['catalog','products'], 'App\Providers\ViewComposers\ProductsComposer');
        }
 }

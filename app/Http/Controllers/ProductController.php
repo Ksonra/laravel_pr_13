@@ -10,8 +10,9 @@ class ProductController extends Controller
 {
     public function getIndex()
     {
+        $catalogs=Catalog::all();
         $products = Product::whereNotNull('discount')->get();
-        return view('products', compact('products'));
+        return view('products', compact('products', 'catalogs'));
     }
     public function getOne(Product $product)
     {
