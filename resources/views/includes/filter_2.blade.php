@@ -24,13 +24,17 @@
                 <button class="btn2">Сортировать по цене</button>
             </div>
             <div class="text-3xl form-check mt-10 mb-10">
-                <input name="discount" class="form-check-input" type="checkbox" value="1" id="discount">
+                <input name="discount" class="form-check-input" type="checkbox" value="1" id="discount"
+                    @if (request()->has('discount')) @if (request()->get('discount') == 1)
+                         @checked(true) @endif
+                    @endif
+                >
                 <label class="form-check-label" for="discount">
                     Скидки
                 </label>
             </div>
-            <div class="fil_2">
-                <select name="categories" id="categories">
+            <div class="fil_2 focus-[#fcf2e7]">
+                <select class="border-[#b25238] bg-[#fcf2e7] size-3/6 pl-2 text-[#bf6547] hover:bg-[#fcf2e7]" name="categories" id="categories">
                     <option value="">Категории </option>
                     @foreach ($catalogs as $catalog)
                         <option value="{{ $catalog->id }}"
@@ -42,21 +46,11 @@
                         </option>
                     @endforeach
                 </select>
-                {{-- <label for="categories">
-                    Выбор категории
-                </label> --}}
             </div>
-            {{-- <div class="form-check mt-10 mb-10">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label  text-red-700 text-3xl" for="defaultCheck1">
-                    <b>SALE</b>
-                </label>
-            </div> --}}
             <div class="text-center text-2xl mt-2 ">
                 <button class="btn2">Найти</button>
             </div>
             <div class="btn2"><a href="{{ asset('allproducts') }}">Сбросить</a></div>
         </div>
     </div>
-
 </form>
