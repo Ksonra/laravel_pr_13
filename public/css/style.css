@@ -168,7 +168,7 @@ section {
   display: flex;
   align-items: center;
   width: 50rem;
-  padding: 1.5rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.222);
   border-radius: 1rem;
 }
@@ -179,13 +179,13 @@ section {
   background: none;
   text-transform: none;
   color: var(--white);
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 
 .header .header-2 .search-bar-container #search-bar::placeholder {
   /* text-transform: capitalize; */
-  color: rgba(255, 255, 255, 0.769);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .header .header-2 .search-bar-container label {
@@ -197,6 +197,7 @@ section {
 
 .header .header-2 .search-bar-container label:hover {
   color: var(--yellow);
+  border: var(--black);
 }
 
 .header .header-3 .navbar a {
@@ -406,7 +407,7 @@ section {
 
 .category .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 27rem);
+  grid-template-columns: repeat(auto-fit, 28rem);
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
@@ -433,7 +434,7 @@ section {
 
 .category .box-container .box .content {
   position: absolute;
-  bottom: -7.5rem;
+  bottom: -6.5rem;
   background: var(--white);
   border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -469,7 +470,7 @@ section {
 }
 
 .product .box-container .box img {
-  height: 30rem;
+  height: 25rem;
   width: 100%;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
   object-fit: cover;

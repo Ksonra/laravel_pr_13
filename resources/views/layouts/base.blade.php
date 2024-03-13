@@ -29,7 +29,7 @@
 
                 <form action="{{ asset('allproducts') }}" class="search-bar-container">
                     @csrf
-                    <input name="search" type="search" id="search-bar" placeholder="Что будем искать?.." />
+                    <input name="search" type="search" class="border-none" id="search-bar" placeholder="Что будем искать?.." />
                     {{-- <label for="search-bar" class="fas fa-search">
                         <input type="submit" value=""></input>
                     </label> --}}
