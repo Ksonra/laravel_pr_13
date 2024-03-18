@@ -152,21 +152,22 @@
                 width="600" height="auto" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-            <form action="">
+            <form action="/contact" method="POST">
+                @csrf
                 <div class="inputBox">
-                    <input type="text" class="p-l-5" required />
+                    <input type="text" name="name" class="p-l-5" required />
                     <label> Имя</label>
                 </div>
                 <div class="inputBox">
-                    <input type="email" required />
+                    <input type="email" name="email" required />
                     <label> email</label>
                 </div>
                 <div class="inputBox">
-                    <input type="number" required />
+                    <input type="text" name="phone" />
                     <label> Номер</label>
                 </div>
                 <div class="inputBox">
-                    <textarea required name="" id="" cols="30" rows="10"></textarea>
+                    <textarea required name="comment" id="" cols="30" rows="10"></textarea>
                     <label> Сообщение</label>
                 </div>
 

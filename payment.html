@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение заказа</title>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fcf2e7;
+        }
+        .confirmation {
+            max-width: 400px;
+            margin: 170px auto;
+            padding: 20px;
+            border: 1px solid #e4a436;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px #bf6547;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .item span {
+            font-weight: bold;
+        }
+        .name_store {
+            color: #bf6547;
+            font-size: larger;
+            text-align: center;
+            padding-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <h1>Номер заказа:{{X}}</h1>
+        <div class="item">
+            <span>Наименование товара:</span>
+            <span>{{Черный ящик}}</span>
+        </div>
+        <div class="item">
+            <span>Количество:</span>
+            <span>{{1}}</span>
+        </div>
+        <div class="item">
+            <span>Цена товара:</span>
+            <span>{{$99.99}}</span>
+        </div>
+        <div class="item">
+            <span>Итоговая цена:</span>
+            <span>{{$99.99}}</span>
+        </div>
+        <div class="item">
+            <span>Способ доставки:</span>
+            <span>Доставка курьером</span>
+        </div>
+        <div class="item">
+            <span>Контакты магазина:</span>
+            <span>Телефон: +375296411979<br>Эл. почта: Ksonra@mail.ru</span>
+        </div>
+        <div class="item">
+            <span>ЕРИП:</span>
+            <span>Интернет-магазины/сервисы--A-Z--C-->>>>>></span>
+            <p class="name_store">CreatiffChik.com</p>
+        </div>
+    </div>
+</body>
+</html>
