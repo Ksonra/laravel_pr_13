@@ -59,11 +59,11 @@
                         <a href="/register" class="fas fa-user-circle">Register</a>
                     @else
                         <a href="/favorite" class="fas fa-heart">{{App\Models\Favorite::where('user_id', auth()->user()->id)->count()}}</a>
-                        <a href="/profile" class="fas fa-user-circle">LK</a>
+                        <a href="/profile" class="fas fa-user-circle">ЛК</a>
                         <a href="{{ route('logout') }}" class="fas fa-user-circle"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Logout
+                            Выход
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                           style="display: none;">

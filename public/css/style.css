@@ -210,15 +210,16 @@ section {
   color: var(--light-color);
   font-size: 2.5rem;
   margin-left: 2rem;
+
 }
 
 .header .header-3 a:hover {
-  color: var(--green);
+  color: var(--black);
 }
 
 #menu-bar {
   font-size: 3rem;
-  color: var(--black);
+  color: var(--white);
   border: 0.1rem solid var(--light-color);
   border-radius: 0.5rem;
   padding: 0.5rem 1.5rem;
