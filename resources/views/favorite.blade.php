@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('content')
 
-    <section class="category" id="category">
+    <section class="mt-5 category" id="category">
         <section class="product" id="product">
             <div class="box-container">
                 @foreach ($favorites as $favorite)
@@ -37,5 +37,6 @@
             </div>
         </section>
     </section>
+    <div class="out"></div>
     </div>
 @endsection

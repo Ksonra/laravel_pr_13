@@ -17,6 +17,7 @@
                     @include('includes.product_one')
                 @endforeach
             </div>
+            <div class="out"></div>
         </section>
     </section>
 @endsection

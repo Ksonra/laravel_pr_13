@@ -434,7 +434,7 @@ section {
 
 .category .box-container .box .content {
   position: absolute;
-  bottom: -6.5rem;
+  bottom: -7rem;
   background: var(--white);
   border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -455,7 +455,7 @@ section {
 
 .product .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-template-columns: repeat(auto-fit, 28rem);
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
@@ -601,7 +601,7 @@ section {
 }
 
 .out{
-    height: 350px;
+    height: 205px;
 }
 
 .icons-container {

@@ -163,8 +163,8 @@
                     <label> email</label>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="phone" />
-                    <label> Номер</label>
+                    <input type="text" name="phone"  placeholder="+375(__) ___ __ __"/>
+                    <label> </label>
                 </div>
                 <div class="inputBox">
                     <textarea required name="comment" id="" cols="30" rows="10"></textarea>

@@ -1,9 +1,10 @@
 Есть контакт! 🎉
-    {{-- Имя {{ $contact->name }} --}}
-    {{-- Email {{ $contact->email }}
-    Телефон {{ $contact->phone }} --}}
+{{-- Имя {{ $contact->name }}
+Email {{ $contact->email }}
+Телефон {{ $contact->phone }}
 
-{{-- Сообщение: <br/>
+Сообщение:
+<br/>
 {!! $contact->comment !!} --}}
 
 

@@ -11,7 +11,7 @@ class ContactController extends Controller
 {
     public function postContact(Request $request){
         $contact=Contact::create($request->all());
-        Mail::to('Ksonra@mail.ru')->send(new SimpleMail($contact));
+        Mail::to('creatiffchic@mail.ru')->send(new SimpleMail($contact));
         return redirect('sendcontact');
     }
 }

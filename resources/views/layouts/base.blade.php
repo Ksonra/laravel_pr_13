@@ -15,6 +15,7 @@
 
 
     <!-- custom css file link  -->
+
     <link rel="stylesheet" href="/css/style.css" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
@@ -124,6 +125,7 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script src="{{ asset('js/script.js') }}"></script>
     @stack('scripts')
 

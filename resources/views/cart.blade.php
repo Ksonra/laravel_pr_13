@@ -1,12 +1,14 @@
 @extends('layouts.base')
 @section('content')
-    <section class="h-100" style="background-color: #eee;">
+<section class="category" id="category">
+
+    <section class="grid grid-flow-col h-100" style="background-color: #eee;">
         <form action="{{ asset('cart/form_order') }}" method="GET">
             <div class="container h-100 py-5">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-10">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h3 class="fw-normal mb-0 text-black">Корзина заказа:</h3>
+                            <h3 class="fw-normal mb-0 ml-1 text-[#b25238] text-2xl">Корзина заказа:</h3>
 
                         </div>
 
@@ -37,14 +39,14 @@
                                         'count{{ $product->id }}': 1
                                 }">
 
-                                    <div class="card-body p-4">
+                                    <div class="card-body p-4 text-[#b25238] text-2xl">
                                         <div class="row d-flex justify-content-between align-items-center">
                                             <div class="col-md-2 col-lg-2 col-xl-2">
                                                 <img src="{{ asset(isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id ? '/images/blackbox.png' : 'storage/' . $product->picture) }}"
                                                     class="img-fluid rounded-3" />
                                             </div>
-                                            <div class="col-md-3 col-lg-3 col-xl-3">
-                                                <p class="lead fw-normal mb-2">
+                                            <div class="col-xs-3 col-md-3 col-lg-3 col-xl-3">
+                                                <p class="text-[#b25238] text-2xl">
                                                     @if (isset($_COOKIE['random_id_' . $product->id]) && $_COOKIE['random_id_' . $product->id] == $product->id)
                                                         Секретный товар
                                                     @else
@@ -61,8 +63,8 @@
                                                 </button>
 
                                                 <input id="product{{ $product->id }}" min="1" max="100"
-                                                    name="product_{{ $product->id }}" type="number"
-                                                    class="form-control form-control-sm"
+                                                    name="product_{{ $product->id }}" type="text"
+                                                    class="form-control form-control-xs text-2xl text-[#b25238] border-[#ebdcb2]"
                                                     @change="change_count_{{ $product->id }}; itogo_func();"
                                                     x-model="count{{ $product->id }}" autocomplete="off" />
                                                 <button class="btn btn-link px-2"
@@ -86,26 +88,19 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                Итоговая сумма:<div x-text='itogo'></div>
-                            </div> --}}
                         </div>
-
-
-
-
-
                         <div class="card">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-warning btn-block btn-lg">Продолжить</button>
+                                <button type="submit" class="btn bg-[#e4a436] hover:bg-[#b25238] ml-3 text-white text-2xl">Продолжить</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </form>
     </section>
+
+</section>
 @endsection
 
 @push('styles')
