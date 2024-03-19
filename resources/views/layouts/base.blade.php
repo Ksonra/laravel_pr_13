@@ -23,6 +23,25 @@
 
 <body>
     <header class="header">
+        <div class="header-1">
+
+            <section class="flex">
+
+                <div class="text-3xl share">
+                    <span> Следи за нашим творчеством : </span>
+                    <a href="https://ru-ru.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="call text-3xl">
+                    <span> Связь : </span>
+                    <a href="/#contact">+375296411979</a>
+                </div>
+
+            </section>
+
+        </div>
         <div class="header-2">
             <section class="flex">
                 <a href="https://github.com/Ksonra" class="logo">
@@ -30,7 +49,8 @@
 
                 <form action="{{ asset('allproducts') }}" class="search-bar-container">
                     @csrf
-                    <input name="search" type="search" class="border-none" id="search-bar" placeholder="Что будем искать?.." />
+                    <input name="search" type="search" class="border-none" id="search-bar"
+                        placeholder="Что будем искать?.." />
                     {{-- <label for="search-bar" class="fas fa-search">
                         <input type="submit" value=""></input>
                     </label> --}}
@@ -52,22 +72,23 @@
                 </nav>
 
                 <div class="icons">
-                    <a href="/cart" class="fas fa-shopping-cart"><span>{{(isset($_COOKIE['order']))?count(explode(',', $_COOKIE['order'])):0}}</span></a>
+                    <a href="/cart"
+                        class="fas fa-shopping-cart"><span>{{ isset($_COOKIE['order']) ? count(explode(',', $_COOKIE['order'])) : 0 }}</span></a>
 
                     @guest()
                         <a href="/login" class="fas fa-user-circle">Login</a>
                         <a href="/register" class="fas fa-user-circle">Register</a>
                     @else
-                        <a href="/favorite" class="fas fa-heart">{{App\Models\Favorite::where('user_id', auth()->user()->id)->count()}}</a>
+                        <a href="/favorite"
+                            class="fas fa-heart">{{ App\Models\Favorite::where('user_id', auth()->user()->id)->count() }}</a>
                         <a href="/profile" class="fas fa-user-circle">ЛК</a>
                         <a href="{{ route('logout') }}" class="fas fa-user-circle"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             Выход
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        {{ csrf_field() }}
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
                         </form>
                     @endguest
 
