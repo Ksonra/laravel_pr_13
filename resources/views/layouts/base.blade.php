@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="call text-3xl">
-                    <span> Связь : </span>
+                    <span><i class='fas fa-phone-alt' style='font-size:24px'></i></span>
                     <a href="/#contact">+375296411979</a>
                 </div>
 
@@ -51,9 +51,6 @@
                     @csrf
                     <input name="search" type="search" class="border-none" id="search-bar"
                         placeholder="Что будем искать?.." />
-                    {{-- <label for="search-bar" class="fas fa-search">
-                        <input type="submit" value=""></input>
-                    </label> --}}
                 </form>
             </section>
         </div>
@@ -76,16 +73,16 @@
                         class="fas fa-shopping-cart"><span>{{ isset($_COOKIE['order']) ? count(explode(',', $_COOKIE['order'])) : 0 }}</span></a>
 
                     @guest()
-                        <a href="/login" class="fas fa-user-circle">Login</a>
-                        <a href="/register" class="fas fa-user-circle">Register</a>
+                        <a href="/login" class="far fa-hand-point-right"></a>
+                        <a href="/register" class="fas fa-user-circle"></a>
                     @else
                         <a href="/favorite"
                             class="fas fa-heart">{{ App\Models\Favorite::where('user_id', auth()->user()->id)->count() }}</a>
-                        <a href="/profile" class="fas fa-user-circle">ЛК</a>
-                        <a href="{{ route('logout') }}" class="fas fa-user-circle"
+                        <a href="/profile" class="fas fa-user-circle"></a>
+                        <a href="{{ route('logout') }}" class="far fa-hand-point-left"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Выход
+
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
@@ -103,6 +100,9 @@
         <section class="box-container">
             <div class="box">
                 <h3>О нас</h3>
+                <p><a href="https://github.com/Ksonra" class="logo">
+                    Nik<i class="fa fa-circle"></i>laevA</a>
+                </p>
                 <p>Украшения ручной работы</p>
                 <p>+37529641-19-79</p>
                 <p>Ksonra@mail.ru</p>
@@ -135,8 +135,9 @@
         </section>
 
         <h1 class="credit">
-            created by <span> Nik<i class="fa fa-circle"></i>laevA </span> |
-            Приятных покупок!
+            {{-- <span>Создатель</span>
+            <span> Nik<i class="fa fa-circle"></i>laevA </span> --}}
+            <span>Приятных покупок!</span>
         </h1>
     </footer>
 
