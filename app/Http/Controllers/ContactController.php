@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function postContact(Request $request){
-        $contact=Contact::create($request->all());
-        Mail::to('creatiffchic@mail.ru')->send(new SimpleMail($contact));
-        return redirect('sendcontact');
+    public function postContact(Request $request)
+    {
+        $contact = Contact::create($request->all());
+
+        return view('payment', compact('contact'));
+        // Mail::to('Ksonra@mail.ru')->send(new SimpleMail($contact));
+        // return redirect('sendcontact');
     }
 }

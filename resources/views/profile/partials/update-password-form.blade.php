@@ -4,18 +4,15 @@
             {{ __('Обновить пароль') }}
         </h2>
 <br>
-        <p class="mt-1 text-[#b25238] text-2xl">
-            {{ __('Используйте более сложный пароль для обеспечения безопасности.') }}
-        </p>
     </header>
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('password.update') }}" class="text-3xl mt-6 space-y-6">
         @csrf
         @method('put')
 
         <div>
             <x-input-label for="current_password" :value="__('Старый пароль')" />
-            <x-text-input id="current_password" name="current_password" type="password" class="bg-[#fcf2e7]  mt-1 block w-full" autocomplete="current-password" />
+            <x-text-input id="current_password" name="current_password" type="password" class="bg-[#fcf2e7]  mt-1 block w-full text-3xl" autocomplete="current-password" />
             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
         </div>
 
@@ -32,7 +29,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <button class="btn">{{ __('Сохранить') }}</чbutton>
+            <button class="btn">{{ __('Сохранить') }}</button>
 
             @if (session('status') === 'password-updated')
                 <p
@@ -41,7 +38,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Сохранить') }}</p>
             @endif
         </div>
     </form>

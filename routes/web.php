@@ -28,8 +28,9 @@ Route::get('catalog/{catalog}', [Controllers\CatalogController::class,'getIndex'
 Route::get('product/{product}', [Controllers\ProductController::class, 'getOne']);
 Route::get('blog', [Controllers\BlogController::class, 'getIndex']);
 Route::get('feed', [Controllers\FeedController::class, 'getIndex']);
+
 Route::post('contact', [Controllers\ContactController::class, 'postContact']); //форма связи
-// Route::get('search', [Controllers\ProductController::class, 'getIndex']);
+
 Route::get('blog/{blog}', [Controllers\BlogController::class, 'getOne']);
 Route::get('add_cart/{id}', [Controllers\OrderController::class, 'addCookie']);
 Route::get('cart', [Controllers\OrderController::class, 'cart'])->name('cart');

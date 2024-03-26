@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>магазин по продаже ювелирных украшений ручной работы</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>магазин по продаже изделий ручной работы</title>
+    <meta name="description"
+        content="Магазин эксклюзивных изделий ручной работы. Драгоценные и полудрагоценные материалы.">
+    <meta name="keywords" content="Украшения ручной работы, эксклюзивные украшения, индивидуальный дизайн, ручная работа">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
@@ -28,10 +30,11 @@
             <section class="flex">
 
                 <div class="text-3xl share">
-                    <span> Следи за нашим творчеством : </span>
+                    {{-- <span> Следи за нашим творчеством : </span> --}}
                     <a href="https://ru-ru.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
                 </div>
 
                 <div class="call text-3xl">
@@ -101,7 +104,7 @@
             <div class="box">
                 <h3>О нас</h3>
                 <p><a href="https://github.com/Ksonra" class="logo">
-                    Nik<i class="fa fa-circle"></i>laevA</a>
+                        Nik<i class="fa fa-circle"></i>laevA</a>
                 </p>
                 <p>Украшения ручной работы</p>
                 <p>+37529641-19-79</p>
