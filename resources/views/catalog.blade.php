@@ -16,7 +16,7 @@
                     <div class="box">
                         <img src="/storage/{{ $product->picture }}" alt="" />
                         <div class="content">
-                            <h2>{{ $product->name }}</h2>
+                            <h2 class="text-2xl text-[#b25238]">{{ $product->name }}</h2>
                             <div class="icons">
                                 <a href="{{ asset('favorite/' . $product->id . '/add') }}" class="fas fa-heart"></a>
                                 <a href="{{ asset('add_cart/' . $product->id) }}" class="fas fa-shopping-cart"></a>
